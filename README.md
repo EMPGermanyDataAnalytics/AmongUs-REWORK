@@ -7,10 +7,10 @@ Currently Ghost Chat crashes the game `*OnSendChat()`
 
 
 # Working On?
--Starting work on ASM compiler.
--Trying to fix Ghost Chat Visibility, currently crashes.
--considering minimap?
--considering force kill all?
+*-Starting work on ASM compiler.
+*-Trying to fix Ghost Chat Visibility, currently crashes.
+*-considering minimap?
+*-considering force kill all?
 
 # Info
 *Starting school focusing on career in software.
