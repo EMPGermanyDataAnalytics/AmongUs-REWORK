@@ -15,6 +15,9 @@ Currently Ghost Chat crashes the game `*OnSendChat()`
 # Info
 *Starting school focusing on career in software.
 This may or may not be updated on a regular basis.
+As mentioned already, please feel free to pull
+request.
+
 
 *(ONLY TESTED ON v2022.3.29s (Build: 1864))
 Steam Version Support Only Note: This may work for other versions, but I will only help with
