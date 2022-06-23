@@ -32,6 +32,17 @@ namespace AUExtern
     public class SaveManager
     {
         public static FUNCTION Get_ChatModeType = new FUNCTION(Offsets.Get_ChatModeType, 2);
+        public static int Level
+        {
+            get
+            {
+               return Mem.m.ReadInt(Offsets._GlobalLevel);
+            }
+            set
+            {
+                Mem.m.WriteMemory(Offsets._GlobalLevel,"int",value.ToString());
+            }
+        }
     }
 
     public class PlayerControl
@@ -61,7 +72,7 @@ namespace AUExtern
 
         public static FUNCTION AntiFullbright = new FUNCTION(Offsets.Anti_Fullbright,5);
         public static FUNCTION SeeGhosts = new FUNCTION(Offsets.CanSeeGhosts,5);
-        public static FUNCTION SeeGhostChat = new FUNCTION(Offsets.CanSeeGhostChat, 5);
+        //public static FUNCTION SeeGhostChat = new FUNCTION(Offsets.CanSeeGhostChat, 5);
 
         public string address;
         public string nickname
@@ -139,6 +150,10 @@ namespace AUExtern
             get
             {
                 return Mem.m.ReadInt(address + Offsets._PlayerData + Offsets._DataLevel);
+            }
+            set
+            {
+                Mem.m.WriteMemory(address + Offsets._PlayerData + Offsets._DataLevel,"int",value.ToString());
             }
         }
         public string role
@@ -336,7 +351,6 @@ namespace AUExtern
             return bytes;
         }
 
-
         public enum Opcodes
         {
             call = 0xE8,
@@ -352,5 +366,4 @@ namespace AUExtern
             sub = 0x2B
         }
     }
-
 }

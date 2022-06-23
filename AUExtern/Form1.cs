@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,12 +23,13 @@ namespace AUExtern
             InitializeComponent();
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
             attatchButton.Location = new Point(22,62);
             Mem.Init();
-
         }
+
 
 
         private void attatchButton_Click(object sender, EventArgs e)
@@ -133,10 +137,10 @@ namespace AUExtern
         public bool _showrole = false;
         public bool _showlevel = false;
 
-
         public string GetPlayerString(PlayerControl p)
         {
             string str = p.nickname;
+
             if (_showdead)
             {
                 str += " Dead: " + p.IsDead.ToString();
@@ -248,8 +252,8 @@ namespace AUExtern
 
         private void seeGhostChatCB_CheckedChanged(object sender, EventArgs e)
         {
-           Mem.m.WriteBytes(PlayerControl.SeeGhostChat.address,(((CheckBox)sender).Checked ? new byte[] {0x90,0x90,0x90,0x90,0x90} : new byte[] {0xE8,0x23,0x87,0x00,0x00}));
-            do_theme(sender);
+            //Mem.m.WriteBytes(PlayerControl.SeeGhostChat.address,(((CheckBox)sender).Checked ? new byte[] {0x90,0x90,0x90,0x90,0x90} : new byte[] {0xE8,0x23,0x87,0x00,0x00}));
+            //do_theme(sender);
         }
 
         private void moji1_Click(object sender, EventArgs e)
@@ -284,6 +288,29 @@ namespace AUExtern
         private void setnametextbox_TextChanged(object sender, EventArgs e)
         {
             nameLengthLabel.Text = setnametextbox.Text.Length.ToString() + "/10";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int value = 0;
+            if(int.TryParse(LevelTB.Text, out value))
+            {
+                PlayerControl.localPlayer.Level = value;
+                SaveManager.Level = value - 1;
+            }
+            else
+            {
+                LevelTB.Text = "";
+                MessageBox.Show("Only Use Numbers Please","Invalid Number",MessageBoxButtons.OK);
+            }
+        }
+
+        private void LevelTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&(e.KeyChar != '.') && (e.KeyChar != '-'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

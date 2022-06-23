@@ -35,6 +35,8 @@
             this.playerlistlabel = new System.Windows.Forms.Label();
             this.hackTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.LevelTB = new MetroFramework.Controls.MetroTextBox();
             this.moji1 = new System.Windows.Forms.Button();
             this.moji2 = new System.Windows.Forms.Button();
             this.moji3 = new System.Windows.Forms.Button();
@@ -105,6 +107,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.LevelTB);
             this.panel1.Controls.Add(this.moji1);
             this.panel1.Controls.Add(this.moji2);
             this.panel1.Controls.Add(this.moji3);
@@ -121,6 +125,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 208);
             this.panel1.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.Location = new System.Drawing.Point(185, 157);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 22);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Set Level";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // LevelTB
+            // 
+            this.LevelTB.Location = new System.Drawing.Point(184, 133);
+            this.LevelTB.MaxLength = 10;
+            this.LevelTB.Multiline = true;
+            this.LevelTB.Name = "LevelTB";
+            this.LevelTB.PromptText = "Level";
+            this.LevelTB.Size = new System.Drawing.Size(111, 23);
+            this.LevelTB.TabIndex = 21;
+            this.LevelTB.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.LevelTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LevelTB_KeyPress);
             // 
             // moji1
             // 
@@ -167,7 +196,7 @@
             this.ghostVisibleCB.AutoSize = true;
             this.ghostVisibleCB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ghostVisibleCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ghostVisibleCB.Location = new System.Drawing.Point(185, 124);
+            this.ghostVisibleCB.Location = new System.Drawing.Point(185, 110);
             this.ghostVisibleCB.Name = "ghostVisibleCB";
             this.ghostVisibleCB.Size = new System.Drawing.Size(110, 23);
             this.ghostVisibleCB.TabIndex = 14;
@@ -205,9 +234,9 @@
             this.resetButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.resetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.resetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.resetButton.Location = new System.Drawing.Point(213, 180);
+            this.resetButton.Location = new System.Drawing.Point(240, 180);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(81, 23);
+            this.resetButton.Size = new System.Drawing.Size(54, 23);
             this.resetButton.TabIndex = 12;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = false;
@@ -231,7 +260,7 @@
             this.metroTrackBar1.Location = new System.Drawing.Point(6, 180);
             this.metroTrackBar1.Minimum = 1;
             this.metroTrackBar1.Name = "metroTrackBar1";
-            this.metroTrackBar1.Size = new System.Drawing.Size(201, 23);
+            this.metroTrackBar1.Size = new System.Drawing.Size(228, 23);
             this.metroTrackBar1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTrackBar1.TabIndex = 10;
             this.metroTrackBar1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -243,7 +272,7 @@
             this.Fullbright.AutoSize = true;
             this.Fullbright.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Fullbright.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Fullbright.Location = new System.Drawing.Point(185, 95);
+            this.Fullbright.Location = new System.Drawing.Point(185, 81);
             this.Fullbright.Name = "Fullbright";
             this.Fullbright.Size = new System.Drawing.Size(59, 23);
             this.Fullbright.TabIndex = 10;
@@ -257,7 +286,7 @@
             this.Noclip.AutoSize = true;
             this.Noclip.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Noclip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Noclip.Location = new System.Drawing.Point(247, 95);
+            this.Noclip.Location = new System.Drawing.Point(247, 81);
             this.Noclip.Name = "Noclip";
             this.Noclip.Size = new System.Drawing.Size(48, 23);
             this.Noclip.TabIndex = 9;
@@ -399,7 +428,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 366);
+            this.ClientSize = new System.Drawing.Size(662, 369);
             this.Controls.Add(this.nameLengthLabel);
             this.Controls.Add(this.topmostbox);
             this.Controls.Add(this.proclabel);
@@ -452,6 +481,8 @@
         private System.Windows.Forms.Button moji2;
         private System.Windows.Forms.Button moji3;
         private System.Windows.Forms.Label nameLengthLabel;
+        private System.Windows.Forms.Button button1;
+        private MetroFramework.Controls.MetroTextBox LevelTB;
     }
 }
 
