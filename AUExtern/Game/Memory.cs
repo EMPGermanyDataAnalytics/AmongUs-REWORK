@@ -22,6 +22,7 @@ namespace AUExtern
     /// </summary>
     public class Mem
     {
+
         #region DllImports
         [DllImport("kernel32.dll")]
         public static extern IntPtr OpenProcess(
@@ -29,6 +30,7 @@ namespace AUExtern
             bool bInheritHandle,
             Int32 dwProcessId
             );
+
 
 #if WINXP
 #else

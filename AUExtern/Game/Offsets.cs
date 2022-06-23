@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using D = Database;
+
+
 
 namespace AUExtern
 {
@@ -11,29 +14,34 @@ namespace AUExtern
         /// <summary>
         /// The struct the holds localplayer, all players, and game options.
         /// </summary>
-        public const string Main = "GameAssembly.dll+01D10144,5C";
+        public const string Main = "GameAssembly.dll+01D1C5E0,5C";
 
         //Main
         public const string _LocalPlayer = ",10";
         public const string _GameOptions = ",14";
         public const string _AllPlayers = ",18";
 
+
+        //SaveController
+        public const string _GlobalLevel = "GameAssembly.dll+01DFB67C,50,F78";
+
         //Player 
-        public const string _PlayerNameText = ",70,80";
-        public const string _PlayerLightHits = ",78,28,0C";
-        public const string _PlayerLightRad = ",78,1C";
-        public const string NoClip = ",7C,08,20";
-        public const string _PlayerShifting = ",4E";
-        public const string _PlayerSpeed = ",80,30";
-        public const string _PlayerGhostSpeed = ",80,34";
+        public const string _PlayerNameText = D.PlayerControl.cosmetics + D.CosmeticsLayer.nameText + D.TMPText.mtext;
+        public const string _PlayerLightHits = D.PlayerControl.myLight + D.LightSource.hits + D.ArrayList.size;
+        public const string _PlayerLightRad = D.PlayerControl.myLight + D.LightSource.LightRadius;
+        public const string NoClip = D.PlayerControl.Collider + ",8,20";
+        public const string _PlayerShifting = D.PlayerControl.shapeshifting;
+        public const string _PlayerSpeed = D.PlayerControl.MyPhysics + D.PlayerPhysics.Speed;
+        public const string _PlayerGhostSpeed = D.PlayerControl.MyPhysics + D.PlayerPhysics.GhostSpeed;
+
 
 
         //PlayerData 
-        public const string _PlayerData = ",50";
-        public const string _DataLevel = ",18";
-        public const string _DataRoleRole = ",20,0C";
-        public const string _DataIsDead = ",28";
-        public const string _DataPlayerID = ",08";
+        public const string _PlayerData = D.PlayerControl.cachedData;
+        public const string _DataLevel = D.PlayerInfo.PlayerLevel;
+        public const string _DataRoleRole = D.PlayerInfo.Role + D.RoleBehaviour.Role;
+        public const string _DataIsDead = D.PlayerInfo.IsDead;
+        public const string _DataPlayerID = D.PlayerInfo.PlayerId;
 
 
         //GameOptions
@@ -70,10 +78,7 @@ namespace AUExtern
         public const string G_ProtectionDuration = ",58,24";
         public const string G_EngineerCooldown = ",5828";
         public const string G_EngineerVentMaxTime = ",58,2C";
-
-
-
-
+ 
 
 
 
@@ -89,20 +94,23 @@ namespace AUExtern
 
 
         //Function Pointers
-        public const string GetUnlockedPets = "GameAssembly.dll+7B560B";
-        public const string GetUnlockedHats = "GameAssembly.dll+7B550B";
-        public const string GetUnlockedPlates = "GameAssembly.dll+7B559B";
-        public const string GetUnlockedSkins = "GameAssembly.dll+7B567B";
-        public const string GetUnlockedVisors = "GameAssembly.dll+7B56EB";
+        public const string GetUnlockedPets = "GameAssembly.dll+57386B";//
+        public const string GetUnlockedHats = "GameAssembly.dll+57376B";//UPDATE
+        public const string GetUnlockedPlates = "GameAssembly.dll+5737FB";//
+        public const string GetUnlockedSkins = "GameAssembly.dll+5738DB";//
+        public const string GetUnlockedVisors = "GameAssembly.dll+57394B";//
 
-        public const string Get_ChatModeType = "GameAssembly.dll+57BE33";
 
-        public const string Anti_Fullbright = "GameAssembly.dll+419C33";
+        //SaveManager.get_ChatModeType
+        public const string Get_ChatModeType = "GameAssembly.dll+7C9253";//
+
+
+        public const string Anti_Fullbright = "GameAssembly.dll+5D5773";//
 
         //Normal:je     See All Chats:jmp    74->EB
-        public const string CanSeeGhostChat = "GameAssembly.dll+27FD90";
+        public const string CanSeeGhostChat = "N/A";
 
-
-        public const string CanSeeGhosts = "GameAssembly.dll+419BA8";
+        //PlayerControl.set_Visible
+        public const string CanSeeGhosts = "GameAssembly.dll+5DD268";//
     }
 }
