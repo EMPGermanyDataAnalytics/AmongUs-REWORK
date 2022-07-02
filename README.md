@@ -1,5 +1,5 @@
 # Among Us External Rework
-!!Updated as of 6/23/22 (Source Code✔️) (Currently displayed version✔️)!!
+!!Updated as of 7/2/2022 (Source Code✔️) (Currently displayed version✔️)!!
 
 Starting school focusing on career in software.
 This may or may not be updated on a regular basis.
