@@ -10,17 +10,31 @@ Issues from the steam version.
 
 
 Features
+
 -MINIMAP!!!
+
 -Name Changer
+
 -Speed Changer
+
 -Reset Speed (To Game Settings Speed)
+
 -Noclip
+
 -Fullbright
+
 -Cosmetics Unlocker
+
 -Force Freechat
+
 -All Players Info (Role, Level, IsDead)
+
 -Sort Players (by role)
+
 -Buggy Ghost Visibility
+
 -Emoji Names
+
 -Change Level (WIP)
+
 
