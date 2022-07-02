@@ -1,4 +1,4 @@
-#Among Us External Rework
+# Among Us External Rework
 !!Updated as of 6/23/22 (Source Code✔️) (Currently displayed version✔️)!!
 
 Starting school focusing on career in software.
@@ -9,7 +9,7 @@ Steam Version Support Only Note: This may work for other versions, but I will on
 Issues from the steam version.
 
 
-#Features
+# Features
 
 -MINIMAP!!!
 
