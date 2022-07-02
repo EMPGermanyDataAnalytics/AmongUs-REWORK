@@ -8,13 +8,9 @@ This may or may not be updated on a regular basis.
 Steam Version Support Only Note: This may work for other versions, but I will only help with
 Issues from the steam version.
 
-KNOWN BUGS
-~'Buggy Ghost Visibility' is very buggy.
-
-
-
 
 Features
+-MINIMAP!!!
 -Name Changer
 -Speed Changer
 -Reset Speed (To Game Settings Speed)
@@ -27,3 +23,4 @@ Features
 -Buggy Ghost Visibility
 -Emoji Names
 -Change Level (WIP)
+
