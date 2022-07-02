@@ -9,7 +9,7 @@ Steam Version Support Only Note: This may work for other versions, but I will on
 Issues from the steam version.
 
 
-Features
+#Features
 
 -MINIMAP!!!
 
