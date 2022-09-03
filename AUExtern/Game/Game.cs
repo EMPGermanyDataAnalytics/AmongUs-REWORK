@@ -22,11 +22,13 @@ namespace AUExtern
     }
     public class HatManager
     {
-        public static FUNCTION getPets = new FUNCTION(Offsets.GetUnlockedPets,2);
-        public static FUNCTION getHats = new FUNCTION(Offsets.GetUnlockedHats, 2);
-        public static FUNCTION getPlates = new FUNCTION(Offsets.GetUnlockedPlates, 2);
-        public static FUNCTION getSkins = new FUNCTION(Offsets.GetUnlockedSkins, 2);
-        public static FUNCTION getVisors = new FUNCTION(Offsets.GetUnlockedVisors, 2);
+        //public static FUNCTION getPets = new FUNCTION(Offsets.GetUnlockedPets,2);
+        //public static FUNCTION getHats = new FUNCTION(Offsets.GetUnlockedHats, 2);
+        //public static FUNCTION getPlates = new FUNCTION(Offsets.GetUnlockedPlates, 2);
+        //public static FUNCTION getSkins = new FUNCTION(Offsets.GetUnlockedSkins, 2);
+        //public static FUNCTION getVisors = new FUNCTION(Offsets.GetUnlockedVisors, 2);
+        public static FUNCTION getCosmetics = new FUNCTION(Offsets.GetUnlockedCosmetics, 2);
+
     }
 
     public class SaveManager
@@ -44,6 +46,23 @@ namespace AUExtern
             }
         }
     }
+
+    public class Vector2
+    {
+        public float x;
+        public float y;
+        public Vector2(float x, float y) 
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public override string ToString()
+        {
+            return $"x:{x.ToString()} y:{y.ToString()}";
+        }
+    }
+
 
     public class PlayerControl
     {
@@ -70,6 +89,23 @@ namespace AUExtern
             }
         }
 
+
+        public static Vector2 localPosition
+        {
+            get
+            {
+                float x = Mem.m.ReadFloat(Offsets.localPosX);
+                float y = Mem.m.ReadFloat(Offsets.localPosY);
+                return new Vector2(x, y);
+            }
+            set
+            {
+                Mem.m.WriteMemory(Offsets.localPosX,"float",value.x.ToString());
+                Mem.m.WriteMemory(Offsets.localPosY, "float", value.y.ToString());
+            }
+        }
+
+
         public static FUNCTION AntiFullbright = new FUNCTION(Offsets.Anti_Fullbright,5);
         public static FUNCTION SeeGhosts = new FUNCTION(Offsets.CanSeeGhosts,5);
         //public static FUNCTION SeeGhostChat = new FUNCTION(Offsets.CanSeeGhostChat, 5);
@@ -88,6 +124,19 @@ namespace AUExtern
                 Mem.m.WriteMemory(address + Offsets._PlayerNameText + Offsets._TextLength,"int",value.Length.ToString());
             }
         }
+
+        public Vector2 position
+        {
+            get
+            {
+                float x = Mem.m.ReadFloat(address + Offsets._PlayerPosVecX);
+                float y = Mem.m.ReadFloat(address + Offsets._PlayerPosVecY);
+                return new Vector2(x,y);
+            }
+        }
+
+
+
         public bool Host
         {
             get
@@ -162,6 +211,15 @@ namespace AUExtern
             {
                 int roleint = Mem.m.ReadInt(address+Offsets._PlayerData+Offsets._DataRoleRole);
                 return Enum.GetNames(typeof(ROLE))[roleint];
+            }
+        }
+
+        public ROLE RawRole
+        {
+            get
+            {
+                int roleint = Mem.m.ReadInt(address + Offsets._PlayerData + Offsets._DataRoleRole);
+                return (ROLE)Enum.GetValues(typeof(ROLE)).GetValue(roleint);
             }
         }
         public float LightRadius

@@ -14,12 +14,17 @@ namespace AUExtern
         /// <summary>
         /// The struct the holds localplayer, all players, and game options.
         /// </summary>
-        public const string Main = "GameAssembly.dll+01D1C5E0,5C";
+        public const string Main = "GameAssembly.dll+01F88BBC,5C";
+
+        public const string localPosX = "15697F9C";
+        public const string localPosY = "15697FA0";
+
+
 
         //Main
-        public const string _LocalPlayer = ",10";
-        public const string _GameOptions = ",14";
-        public const string _AllPlayers = ",18";
+        public const string _LocalPlayer = ",0";
+        public const string _GameOptions = ",4";
+        public const string _AllPlayers = ",8";
 
 
         //SaveController
@@ -33,6 +38,8 @@ namespace AUExtern
         public const string _PlayerShifting = D.PlayerControl.shapeshifting;
         public const string _PlayerSpeed = D.PlayerControl.MyPhysics + D.PlayerPhysics.Speed;
         public const string _PlayerGhostSpeed = D.PlayerControl.MyPhysics + D.PlayerPhysics.GhostSpeed;
+        public const string _PlayerPosVecX = ",74,38,8,90";
+        public const string _PlayerPosVecY = ",74,38,8,94";
 
 
 
@@ -94,18 +101,20 @@ namespace AUExtern
 
 
         //Function Pointers
-        public const string GetUnlockedPets = "GameAssembly.dll+57386B";//
-        public const string GetUnlockedHats = "GameAssembly.dll+57376B";//UPDATE
-        public const string GetUnlockedPlates = "GameAssembly.dll+5737FB";//
-        public const string GetUnlockedSkins = "GameAssembly.dll+5738DB";//
-        public const string GetUnlockedVisors = "GameAssembly.dll+57394B";//
+        //public const string GetUnlockedPets = "GameAssembly.dll+57386B";//
+        //public const string GetUnlockedHats = "GameAssembly.dll+57376B";//UPDATE
+        //public const string GetUnlockedPlates = "GameAssembly.dll+5737FB";//
+        //public const string GetUnlockedSkins = "GameAssembly.dll+5738DB";//
+        //public const string GetUnlockedVisors = "GameAssembly.dll+57394B";//
+
+        public const string GetUnlockedCosmetics = "GameAssembly.dll+8E267B ";//
 
 
         //SaveManager.get_ChatModeType
         public const string Get_ChatModeType = "GameAssembly.dll+7C9253";//
 
 
-        public const string Anti_Fullbright = "GameAssembly.dll+5D5773";//
+        public const string Anti_Fullbright = "GameAssembly.dll+6A841E";//
 
         //Normal:je     See All Chats:jmp    74->EB
         public const string CanSeeGhostChat = "N/A";
