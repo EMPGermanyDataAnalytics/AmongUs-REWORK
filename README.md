@@ -1,17 +1,18 @@
+###############
+# Original creator is Glatriix who helped me updateing the offsets
+
 # Among Us External Rework
-!!Updated as of 7/2/2022 (Source Code✔️) (Currently displayed version✔️)!!
+!!Updated as of 9/3/2022 (Source Code✔️) (Currently displayed version✔️)!!
 
-Starting school focusing on career in software.
-This may or may not be updated on a regular basis.
 
-(ONLY TESTED ON v2022.6.21s (Build: 2007))
+(ONLY TESTED ON v2022.8.24s (Build: 2267))
 Steam Version Support Only Note: This may work for other versions, but I will only help with
 Issues from the steam version.
 
 
 # Features
 
--MINIMAP!!!
+-MINIMAP!!!  (Skeld only atm)
 
 -Name Changer
 
@@ -35,6 +36,6 @@ Issues from the steam version.
 
 -Emoji Names
 
--Change Level (WIP)
+-Change Level (works for me)
 
 
