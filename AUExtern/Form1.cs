@@ -111,20 +111,22 @@ namespace AUExtern
 
         private void UnlckCsmtcs_Click(object sender, EventArgs e)
         {
-            HatManager.getPets.NOP();
-            HatManager.getHats.NOP();
-            HatManager.getSkins.NOP();
-            HatManager.getPlates.NOP();
-            HatManager.getVisors.NOP();
+            //HatManager.getPets.NOP();
+            //HatManager.getHats.NOP();
+            //HatManager.getSkins.NOP();
+            //HatManager.getPlates.NOP();
+            //HatManager.getVisors.NOP();
+            HatManager.getCosmetics.NOP();
         }
 
         private void rvertcsmtcs_Click(object sender, EventArgs e)
         {
-            HatManager.getPets.Revert();
-            HatManager.getHats.Revert();
-            HatManager.getSkins.Revert();
-            HatManager.getPlates.Revert();
-            HatManager.getVisors.Revert();
+            //HatManager.getPets.Revert();
+            //HatManager.getHats.Revert();
+            //HatManager.getSkins.Revert();
+            //HatManager.getPlates.Revert();
+            //HatManager.getVisors.Revert();
+            HatManager.getCosmetics.Revert();
         }
 
         private void FrceFreecht_Click(object sender, EventArgs e)
@@ -296,7 +298,7 @@ namespace AUExtern
             if(int.TryParse(LevelTB.Text, out value))
             {
                 PlayerControl.localPlayer.Level = value;
-                SaveManager.Level = value - 1;
+                SaveManager.Level = value ;
             }
             else
             {
@@ -311,6 +313,11 @@ namespace AUExtern
             {
                 e.Handled = true;
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
